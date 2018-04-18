@@ -1,0 +1,55 @@
+Here is what my test cases produced:
+"Test 1: isEmpty() returns true on an empty list: PASSED
+
+Test 2: isEmpty() returns false on a populated list: FAILED
+
+Test 3: size() returns 0 on an empty list: PASSED
+
+Test 4: size() returns 3 with a list of 3 elements: PASSED
+
+Test 5: search() returns false when that value does not exist in the list: PASSED
+
+Test 6: search() returns true when the value exists in the list: PASSED
+
+Test 7:
+	List contains 1 in element 0: FAILED
+	List contains 2 in element 1: PASSED
+	List contains 3 in element 2: FAILED
+	addBack() succesfully adds elements and puts them in the list in order: FAILED
+
+Test 8:
+	List contains 1 in element 2: PASSED
+	List contains 2 in element 1: PASSED
+	List contains 3 in element 0: PASSED
+	addFront() succesfully adds elements and puts them in the list in order: PASSED
+
+Test 9: removeBack() returns false on an empty list: PASSED
+
+ Test 10: removeBack() deleted the last element: FAILED
+
+ Test 11: removeBack() deleted some element in the list: FAILED
+
+Test 12: removeFront() returns false on an empty list: PASSED
+
+ Test 13: removeFront() deleted the first element: FAILED
+
+ Test 14: removeFront() deleted some element in the list: FAILED
+
+
+
+ Total Score: 8/14"
+
+Analysis:
+  isEmpty():
+    From what I can tell, the isEmpty() function does not working when the list is populated. In other words,
+    it is always telling whatever calls it that the list is empty.
+  addBack():
+    addBack() is succesfully adding the values to the list but it is acting exactly the same as addFront. It
+    just adds the element to the front of the list instead of the back.
+  removeBack():
+    Good news with this is that since the isEmpty() function works on an empty list, removeBack() also works on an
+    empty list. But also, since isEmpty() is always going to return true, removeBack() is never going to go into
+    the other if/else branch that actually does the deleting, so I'm not sure if its deleting functionality is
+    actually working, but I am unable to test that because of the isEmpty() dependency.
+  removeFront():
+    Exact same issue as removeBack().
